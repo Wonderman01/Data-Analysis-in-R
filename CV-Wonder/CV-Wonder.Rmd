@@ -1,0 +1,59 @@
+---
+name: Wonder
+surname: Unaji
+position: "Data Analyst"
+address: "Nigeria"
+phone: +234 8085621163
+pronouns: He/him
+profilepic: wonder.jpg
+www: wondertheanalyst.com
+email: "unajiw54@gmail.com"
+github: wonderunaji
+linkedin: wonderunaji
+date: "`r format(Sys.time(), '%B %Y')`"
+aboutme: "Wonder is  a certified Data Analyst with vast experience in Datacleaning, Data Analysis and Data visualisations for informed decision making"
+output: vitae::twentyseconds
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+```
+
+# Education
+
+```{r}
+library(tibble)
+tribble(
+  ~University,~Course,~Year,~where,
+  "Obafemi Awolowo University","B.sc ComputerScience with Mathematics","2021-2026","Nigeria"
+) %>% 
+  detailed_entries(Course, Year, University, where)
+```
+
+
+
+
+
+# Certifications
+
+```{r}
+tribble(
+  ~Course,~Year,~where,
+  "Google Data Analysis",2023,"Google-Coursera"
+) %>% 
+  detailed_entries(Year, Course, where)
+
+```
+
+
+
+
+
+# Basic Skills 
+
+* Data Cleaning using Spreadsheets,SQL,R
+* Data Visualizations using Tableau and R
+* Python for advanced processes
+
+

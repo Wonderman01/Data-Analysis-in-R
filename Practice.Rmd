@@ -1,0 +1,63 @@
+---
+title: "Palmer Penguins"
+author: "Dr.Wonder Unaji"
+date: "2023-10-05"
+output:html_document
+---
+## Loading the libraries used both 'ggplot' and 'palmerpenguins'
+```{r}
+library(ggplot2)
+library(palmerpenguins)
+```
+Here all i did was load the packages to be worked with
+
+## Working with the data
+```{r penguins,echo=FALSE}
+ggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g)) + 
+  geom_point() 
+```
+Having loaded the packages earlier in the last code chunk.I used the ggplot function then then the geom_point function to generate the scatter plot using the the two relationships which are flipper_length_mm and body_mass_g 
+
+## Modifying the visual
+```{r}
+ggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g,colour =sex,shape =species)) + 
+  geom_point() 
+```
+Modifying the data for easy visibility by introducing colour and shape variables.
+
+## Dividing the relationship based on their species
+````{r}
+ggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g,colour =sex,shape =species))+
+  geom_point()+
+  facet_wrap(~species)
+````
+Here i used the facet function to show a subset of the entire plot using their species i.e Adelies,chinstrap and gentoo so we could study the visual to see the trends individually.
+
+## Adding a Title and Subtitle 
+````{r}
+ggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g,colour =sex,shape =species))+
+  geom_point()+
+  facet_wrap(~species)+
+  labs(subtitle="Palmer Penguins:Flipper_length_mm vs Body_mass_g using faceting",caption = "Data collected by Dr Elon Church")
+````
+Improved visualisations by adding title and source of the data using the labs function
+
+## Assigning a variable to represent the enitre code for easy process
+````{r}
+W <- ggplot(data=penguins, aes(x=flipper_length_mm, y=body_mass_g,colour =sex,shape =species))+
+  geom_point()+
+  facet_wrap(~species)+
+  labs(subtitle="Palmer Penguins:Flipper_length_mm vs Body_mass_g using faceting",caption = "Data collected by Dr Elon Church")
+````
+For easy referencing as we proceed I assigned all the data in the code chunk to the variable W
+## Formatting texts Final
+````{r}
+W+ theme(
+  plot.subtitle = element_text(family = "Arial", size = 16, face = "bold"),
+  axis.title.x = element_text(family = "Arial", size = 12),
+  axis.title.y = element_text(family = "Arial", size = 12,)
+)
+````
+Formatting and final adjustments to data
+
+
